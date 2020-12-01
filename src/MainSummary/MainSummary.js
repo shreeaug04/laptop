@@ -1,4 +1,5 @@
 import React from 'react';
+import SummaryTotal from '../SummaryTotal/SummaryTotal'
 
 function MainSummary(props){
 
@@ -17,22 +18,26 @@ function MainSummary(props){
         );
     });
 
-    const total = Object.keys(props.selected).reduce(
-        (acc, curr) => acc + props.selected[curr].cost,
-        0
-    );
+    // const total = Object.keys(props.selected).reduce(
+    //     (acc, curr) => acc + props.selected[curr].cost,
+    //     0
+    // );
 
     return (
         <section className="main__summary">
             <h2>Your cart</h2>
             {summary}
-            <div className="summary__total">
+            {/* <div className="summary__total">
                 <div className="summary__total__label">Total</div>
                 <div className="summary__total__value">
                     {props.USCurrencyFormat.format(total)}
                 </div>
-            </div>
+            </div> */}
+            <SummaryTotal
+                selected={props.selected}
+                USCurrencyFormat={props.USCurrencyFormat}
+            />
         </section>
     )
-}
+ }
 export default MainSummary
