@@ -60,6 +60,7 @@ class App extends Component {
             selected={this.state.selected}
             USCurrencyFormat={USCurrencyFormat}
           />
+          
 
           
         </main>
